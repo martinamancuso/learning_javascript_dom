@@ -1,0 +1,67 @@
+<!-- Stampa in ordine in console:
+
+1. l'elemento padre di ul.
+2. il secondo elemento figlio di ul.
+3. l'elemento fratello successivo del secondo li.
+4. l'elemento fratello precedente del secondo li.
+
+Il tutto utilizzando tutte e 4 le proprietà viste nel video. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Martina">
+  <title>Navigare il DOM</title>
+</head>
+
+<body>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+
+  <script>
+    const html = document.documentElement
+    console.log(html)
+
+    const htmlChildren = html.children
+    console.log(htmlChildren)
+
+    const body = html.children[1]
+    console.log(body)
+
+    const bodyChildren = body.children
+    console.log(bodyChildren)
+
+    const ul = body.children[0]
+    console.log(ul)
+
+    // 1. l'elemento padre di <ul>
+    const ulParent = ul.parentElement
+    console.log(ulParent)
+
+    const ulChildren = ul.children
+    console.log(ulChildren)
+
+    // 2. il secondo elemento figlio di <ul>
+    const secondUlChild = ul.children[1]
+    console.log(secondUlChild)
+
+    // 3. l'elemento fratello successivo del secondo <li>
+    const nextElementSibling = ul.children[1].nextElementSibling
+    console.log(nextElementSibling)
+
+    // 4. l'elemento fratello precedente del secondo <li>
+    const previousElementSibling = ul.children[1].previousElementSibling
+    console.log(previousElementSibling)
+  </script>
+
+</body>
+
+</html>
