@@ -1,0 +1,70 @@
+<!-- Implementare il codice necessario per:
+
+- Recuperare il valore di ciascun campo di 'input' 
+e creare un oggetto 'person' contenente le proprietà: 'firstName', 'lastName' e 'age'.
+
+- Infine recuperare l'elemento 'form' e aggiungere l'attributo 'data-person' 
+contenente l'oggetto 'person' in formato json. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Martina">
+  <title>Cercare elementi nel DOM</title>
+</head>
+
+<body>
+  <div id="container">
+    <form>
+      <div>
+        <label>First Name:</label>
+        <input type="text" class="form-input" id="firstName" value="Mario" />
+      </div>
+      <div>
+        <label>Last Name:</label>
+        <input type="text" class="form-input" id="lastName" value="Rossi" />
+      </div>
+      <div>
+        <label>Age:</label>
+        <input type="number" class="form-input" id="age" value="25" />
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // Recupero i valori di ciascun campo di 'input':
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const age = document.getElementById('age').value;
+
+    console.log(firstName);
+    console.log(lastName);
+    console.log(age);
+
+    // Creo l'oggetto 'person' con le tre proprietà:
+    const person = {
+      firstName,
+      lastName,
+      age
+    };
+
+    console.log(person);
+
+    // Converto l'oggetto 'person' in una stringa JSON:
+    const personJson = JSON.stringify(person);
+
+    console.log(personJson);
+
+    // Recupero il tag 'form' e aggiungo l'attributo 'data-person':
+    const form = document.querySelector('form');
+    form.setAttribute('data-person', personJson);
+
+    console.log(form);
+  </script>
+</body>
+
+</html>
