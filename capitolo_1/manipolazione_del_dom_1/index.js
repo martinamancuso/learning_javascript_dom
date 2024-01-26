@@ -8,7 +8,7 @@ const addProduct = () => {
   li.innerText = input.value;
 
   const checkBox = document.createElement("input");
-  checkBox.setAttributeNode("type", "checkbox");
-  ul.appendChile(li);
+  checkBox.setAttribute("type", "checkbox");
+  ul.appendChild(li);
   li.appendChild(checkBox);
 };
